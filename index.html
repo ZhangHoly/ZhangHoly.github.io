@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -88,7 +88,7 @@
 <h3 id="3-测试ssh无密登陆"><a href="#3-测试ssh无密登陆" class="headerlink" title="3 测试ssh无密登陆"></a>3 测试ssh无密登陆</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh localhost </div><div class="line"># 如果不提示输入密码则配置成功</div></pre></td></tr></table></figure>
 <h3 id="4-下载hadoop"><a href="#4-下载hadoop" class="headerlink" title="4 下载hadoop"></a>4 下载hadoop</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget http://muug.ca/mirror/apache-dist/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz</div></pre></td></tr></table></figure>
 <h3 id="5-安装hadoop"><a href="#5-安装hadoop" class="headerlink" title="5 安装hadoop"></a>5 安装hadoop</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo tar -xzvf hadoop-2.7.3.tar.gz -C /usr/local</div><div class="line">cd /usr/local</div><div class="line">sudo chown -R 777 hadoop</div></pre></td></tr></table></figure>
-<h3 id="6-配置环境变量"><a href="#6-配置环境变量" class="headerlink" title="6 配置环境变量"></a>6 配置环境变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">vi ~/.bashrc</div><div class="line">添加如下内容</div><div class="line"># Hadoop Config</div><div class="line">export HADOOP_HOME=/usr/local/hadoop</div><div class="line">export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH</div></pre></td></tr></table></figure>
+<h3 id="6-配置环境变量"><a href="#6-配置环境变量" class="headerlink" title="6 配置环境变量"></a>6 配置环境变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">vi ~/.bashrc</div><div class="line">添加如下内容</div><div class="line"># Hadoop Config</div><div class="line">export HADOOP_HOME=/usr/local/hadoop</div><div class="line">export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop</div><div class="line">export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH</div></pre></td></tr></table></figure>
 <h3 id="6-测试"><a href="#6-测试" class="headerlink" title="6 测试"></a>6 测试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">source ~/.bashrc</div><div class="line">hadoop version</div></pre></td></tr></table></figure>
 <h3 id="7-Hadoop伪分布式配置"><a href="#7-Hadoop伪分布式配置" class="headerlink" title="7 Hadoop伪分布式配置"></a>7 Hadoop伪分布式配置</h3><h4 id="7-1-修改配置文件core-site-xml"><a href="#7-1-修改配置文件core-site-xml" class="headerlink" title="7.1 修改配置文件core-site.xml"></a>7.1 修改配置文件core-site.xml</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">cd /usr/local/hadoop</div><div class="line">vim ./etc/hadoop/core-site.xml</div><div class="line"># 修改为如下</div><div class="line">&lt;configuration&gt;</div><div class="line">    &lt;property&gt;</div><div class="line">        &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;</div><div class="line">        &lt;value&gt;file:/usr/local/hadoop/tmp&lt;/value&gt;</div><div class="line">        &lt;description&gt;Abase for other temporary directories.&lt;/description&gt;</div><div class="line">    &lt;/property&gt;</div><div class="line">    &lt;property&gt;</div><div class="line">        &lt;name&gt;fs.defaultFS&lt;/name&gt;</div><div class="line">        &lt;value&gt;hdfs://localhost:9000&lt;/value&gt;</div><div class="line">    &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>
 <h4 id="7-2-修改配置文件hdfs-site-xml"><a href="#7-2-修改配置文件hdfs-site-xml" class="headerlink" title="7.2 修改配置文件hdfs-site.xml"></a>7.2 修改配置文件hdfs-site.xml</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">cd /usr/local/hadoop</div><div class="line">vim ./etc/hadoop/hdfs-site/xml</div><div class="line"># 修改为如下</div><div class="line">&lt;configuration&gt;</div><div class="line">    &lt;property&gt;</div><div class="line">        &lt;name&gt;dfs.replication&lt;/name&gt;</div><div class="line">        &lt;value&gt;1&lt;/value&gt;</div><div class="line">    &lt;/property&gt;</div><div class="line">    &lt;property&gt;</div><div class="line">        &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;</div><div class="line">        &lt;value&gt;file:/usr/local/hadoop/tmp/dfs/name&lt;/value&gt;</div><div class="line">    &lt;/property&gt;</div><div class="line">    &lt;property&gt;</div><div class="line">        &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;</div><div class="line">        &lt;value&gt;file:/usr/local/hadoop/tmp/dfs/data&lt;/value&gt;</div><div class="line">    &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>
@@ -116,7 +116,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/01/影视推荐引擎之3-hadoop-spark安装/" data-id="cj0yle9am00024qzi11g8csig" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/04/01/影视推荐引擎之3-hadoop-spark安装/" data-id="cj0yxu0u00003hspdh5qxixms" class="article-share-link">Share</a>
       
       
     </footer>
@@ -157,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/27/影视推荐引擎之2-scala安装/" data-id="cj0yle9an00034qziz1qkum61" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/03/27/影视推荐引擎之2-scala安装/" data-id="cj0yxu0ty0002hspdmgyuj8r0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -205,7 +205,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/27/影视推荐引擎之1-Java配置/" data-id="cj0yle9ae00004qzidl6rx4j3" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/03/27/影视推荐引擎之1-Java配置/" data-id="cj0yxu0tv0001hspdymkb9lsb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -250,7 +250,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/27/hello-world/" data-id="cj0yle9aj00014qzidzhkldi5" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/03/27/hello-world/" data-id="cj0yxu0tq0000hspdphthi8qb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -285,7 +285,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -318,7 +318,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
