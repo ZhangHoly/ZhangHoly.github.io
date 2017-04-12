@@ -61,6 +61,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-django实现smtp发邮件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/12/django实现smtp发邮件/" class="article-date">
+  <time datetime="2017-04-12T09:38:19.000Z" itemprop="datePublished">2017-04-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/12/django实现smtp发邮件/">django实现smtp发邮件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">django-admin startproject django_email_study</div><div class="line">./manage.py migrate</div><div class="line">./manage.py shell</div></pre></td></tr></table></figure>
+<p>在Shell里面输入<br>第一行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">from django.core.mail import send_mail</div></pre></td></tr></table></figure></p>
+<p>第二行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">send_mail(&quot;holySubject&quot;,&quot;holyMessage&quot;,&quot;holydevil@163.com&quot;,[&quot;holydevil@qq.com&quot;],fail_silently=False,)</div></pre></td></tr></table></figure></p>
+<p>在邮箱查询了一下成功了</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/12/django实现smtp发邮件/" data-id="cj1esauw30000c9pde2wm6j4z" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-python实现的smtp发邮件" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/04/12/python实现的smtp发邮件/" class="article-date">
@@ -88,7 +128,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/12/python实现的smtp发邮件/" data-id="cj1eq3cj50001txpdl1otdllm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/12/python实现的smtp发邮件/" data-id="cj1esauw80001c9pdvpmvb4i7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -135,7 +175,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/01/影视推荐引擎之4-mahout安装/" data-id="cj1eq3cjc0004txpd4i59ivd4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/01/影视推荐引擎之4-mahout安装/" data-id="cj1esauwh0006c9pd047h8wv5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -200,7 +240,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/01/影视推荐引擎之3-hadoop-spark安装/" data-id="cj1eq3ck00005txpdmwum20z7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/01/影视推荐引擎之3-hadoop-spark安装/" data-id="cj1esauwd0004c9pdi3lykvfr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -241,7 +281,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/27/影视推荐引擎之2-scala安装/" data-id="cj1eq3cj80002txpdhqowdjbq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/27/影视推荐引擎之2-scala安装/" data-id="cj1esauwf0005c9pd30si3kuw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -289,7 +329,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/27/影视推荐引擎之1-Java配置/" data-id="cj1eq3cja0003txpdvq3m2p8v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/27/影视推荐引擎之1-Java配置/" data-id="cj1esauwc0003c9pdyct9vhov" class="article-share-link">Share</a>
       
       
     </footer>
@@ -334,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/27/hello-world/" data-id="cj1eq3cj00000txpdkz2xqkfn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/27/hello-world/" data-id="cj1esauwa0002c9pdtkqz0jz8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -374,6 +414,10 @@
       <ul>
         
           <li>
+            <a href="/2017/04/12/django实现smtp发邮件/">django实现smtp发邮件</a>
+          </li>
+        
+          <li>
             <a href="/2017/04/12/python实现的smtp发邮件/">python实现的smtp发邮件</a>
           </li>
         
@@ -387,10 +431,6 @@
         
           <li>
             <a href="/2017/03/27/影视推荐引擎之2-scala安装/">影视推荐引擎之2-scala安装</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/27/影视推荐引擎之1-Java配置/">影视推荐引擎之1-Java配置</a>
           </li>
         
       </ul>
