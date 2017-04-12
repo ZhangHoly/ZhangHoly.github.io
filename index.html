@@ -61,6 +61,43 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-python实现的smtp发邮件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/12/python实现的smtp发邮件/" class="article-date">
+  <time datetime="2017-04-12T08:34:26.000Z" itemprop="datePublished">2017-04-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/12/python实现的smtp发邮件/">python实现的smtp发邮件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>折腾了一大天才搞定，啥事情不搞不知道啊</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">import smtplib</div><div class="line">from email.mime.text import MIMEText</div><div class="line"></div><div class="line"></div><div class="line">msg = MIMEText(&apos;htqq to see ok.&apos;, &apos;plain&apos;, &apos;utf-8&apos;)</div><div class="line"></div><div class="line">def prompt(prompt):</div><div class="line">    return input(prompt).strip()</div><div class="line"></div><div class="line"># 输入Email地址和口令:</div><div class="line">from_addr = prompt(&apos;From: &apos;)</div><div class="line">password = prompt(&apos;Password: &apos;)</div><div class="line"># 输入SMTP服务器地址:</div><div class="line">smtp_server = prompt(&apos;SMTP server: &apos;)</div><div class="line"># 输入收件人地址:</div><div class="line">to_addr = prompt(&apos;To: &apos;)</div><div class="line"></div><div class="line">msg[&apos;From&apos;] = from_addr  </div><div class="line">msg[&apos;To&apos;] = to_addr</div><div class="line"></div><div class="line">server = smtplib.SMTP(smtp_server, 25) # SMTP协议默认端口是25</div><div class="line">server.set_debuglevel(1)</div><div class="line">server.login(from_addr, password)</div><div class="line">server.sendmail(from_addr, [to_addr], msg.as_string())</div><div class="line">server.quit()</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/12/python实现的smtp发邮件/" data-id="cj1eq0m4j0000s3pdyxcxjurc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-影视推荐引擎之4-mahout安装" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/04/01/影视推荐引擎之4-mahout安装/" class="article-date">
@@ -98,7 +135,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/01/影视推荐引擎之4-mahout安装/" data-id="cj0z2zro70004lqpd49csup2g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/01/影视推荐引擎之4-mahout安装/" data-id="cj1eq0m500005s3pdo3xx35sc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -163,7 +200,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/01/影视推荐引擎之3-hadoop-spark安装/" data-id="cj0z2zro50003lqpd58irfl1q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/01/影视推荐引擎之3-hadoop-spark安装/" data-id="cj1eq0m4x0004s3pdk8vpy3je" class="article-share-link">Share</a>
       
       
     </footer>
@@ -204,7 +241,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/27/影视推荐引擎之2-scala安装/" data-id="cj0z2zrny0001lqpd53kjzhmm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/27/影视推荐引擎之2-scala安装/" data-id="cj1eq0m4r0002s3pdrwj1j814" class="article-share-link">Share</a>
       
       
     </footer>
@@ -252,7 +289,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/27/影视推荐引擎之1-Java配置/" data-id="cj0z2zro20002lqpdwmj0sh8x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/27/影视推荐引擎之1-Java配置/" data-id="cj1eq0m4o0001s3pdmq4i1db2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -297,7 +334,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/27/hello-world/" data-id="cj0z2zrnt0000lqpd3l47013o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/27/hello-world/" data-id="cj1eq0m4u0003s3pdc1k8ee3u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -337,6 +374,10 @@
       <ul>
         
           <li>
+            <a href="/2017/04/12/python实现的smtp发邮件/">python实现的smtp发邮件</a>
+          </li>
+        
+          <li>
             <a href="/2017/04/01/影视推荐引擎之4-mahout安装/">影视推荐引擎之4-mahout安装</a>
           </li>
         
@@ -350,10 +391,6 @@
         
           <li>
             <a href="/2017/03/27/影视推荐引擎之1-Java配置/">影视推荐引擎之1-Java配置</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/27/hello-world/">Hello World</a>
           </li>
         
       </ul>
