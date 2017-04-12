@@ -6,21 +6,21 @@
   <title>django实现smtp发邮件 | 张弘力的每天努力一点点</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="123django-admin startproject django_email_study./manage.py migrate./manage.py shell
-在Shell里面输入第一行1from django.core.mail import send_mail
-第二行1send_mail(&amp;quot;holySubject&amp;quot;,&amp;quot;holyMessage&amp;quot;,&amp;">
+首先在setting.py里面增加如下内容
+1234567EMAIL_BACKEND = &amp;apos;django.core.mail.backends.smtp.EmailBackend&amp;apos;EMAIL_USE_TLS =">
 <meta property="og:type" content="article">
 <meta property="og:title" content="django实现smtp发邮件">
 <meta property="og:url" content="http://yoursite.com/2017/04/12/django实现smtp发邮件/index.html">
 <meta property="og:site_name" content="张弘力的每天努力一点点">
 <meta property="og:description" content="123django-admin startproject django_email_study./manage.py migrate./manage.py shell
-在Shell里面输入第一行1from django.core.mail import send_mail
-第二行1send_mail(&amp;quot;holySubject&amp;quot;,&amp;quot;holyMessage&amp;quot;,&amp;">
-<meta property="og:updated_time" content="2017-04-12T09:39:14.000Z">
+首先在setting.py里面增加如下内容
+1234567EMAIL_BACKEND = &amp;apos;django.core.mail.backends.smtp.EmailBackend&amp;apos;EMAIL_USE_TLS =">
+<meta property="og:updated_time" content="2017-04-12T22:51:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="django实现smtp发邮件">
 <meta name="twitter:description" content="123django-admin startproject django_email_study./manage.py migrate./manage.py shell
-在Shell里面输入第一行1from django.core.mail import send_mail
-第二行1send_mail(&amp;quot;holySubject&amp;quot;,&amp;quot;holyMessage&amp;quot;,&amp;">
+首先在setting.py里面增加如下内容
+1234567EMAIL_BACKEND = &amp;apos;django.core.mail.backends.smtp.EmailBackend&amp;apos;EMAIL_USE_TLS =">
   
     <link rel="alternate" href="/atom.xml" title="张弘力的每天努力一点点" type="application/atom+xml">
   
@@ -60,7 +60,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Søk"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -92,6 +92,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">django-admin startproject django_email_study</div><div class="line">./manage.py migrate</div><div class="line">./manage.py shell</div></pre></td></tr></table></figure>
+<p>首先在setting.py里面增加如下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">EMAIL_BACKEND = &apos;django.core.mail.backends.smtp.EmailBackend&apos;</div><div class="line">EMAIL_USE_TLS = False</div><div class="line">EMAIL_HOST = &apos;smtp.163.com&apos;</div><div class="line">EMAIL_PORT = 25</div><div class="line">EMAIL_HOST_USER = &apos;holydevil@163.com&apos;</div><div class="line">EMAIL_HOST_PASSWORD = &apos;9lingqq)&apos;</div><div class="line">DEFAULT_FROM_EMAIL = &apos;holydevil@163.com&apos;</div></pre></td></tr></table></figure>
 <p>在Shell里面输入<br>第一行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">from django.core.mail import send_mail</div></pre></td></tr></table></figure></p>
 <p>第二行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">send_mail(&quot;holySubject&quot;,&quot;holyMessage&quot;,&quot;holydevil@163.com&quot;,[&quot;holydevil@qq.com&quot;],fail_silently=False,)</div></pre></td></tr></table></figure></p>
 <p>在邮箱查询了一下成功了</p>
@@ -99,7 +101,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/12/django实现smtp发邮件/" data-id="cj1esauw30000c9pde2wm6j4z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/12/django实现smtp发邮件/" data-id="cj1fkm41h0001u5rnp785huso" class="article-share-link">Share</a>
       
       
     </footer>
@@ -133,7 +135,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Arkiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li></ul>
     </div>
@@ -143,7 +145,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Siste innlegg</h3>
     <div class="widget">
       <ul>
         
