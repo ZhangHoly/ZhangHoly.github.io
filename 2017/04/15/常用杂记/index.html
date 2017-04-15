@@ -3,24 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>django实现smtp发邮件 | 张弘力的每天努力一点点</title>
+  <title>常用杂记 | 张弘力的每天努力一点点</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="123django-admin startproject django_email_study./manage.py migrate./manage.py shell
-首先在setting.py里面增加如下内容
-1234567EMAIL_BACKEND = &amp;apos;django.core.mail.backends.smtp.EmailBackend&amp;apos;EMAIL_USE_TLS =">
-<meta property="og:type" content="article">
-<meta property="og:title" content="django实现smtp发邮件">
-<meta property="og:url" content="http://yoursite.com/2017/04/12/django实现smtp发邮件/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="常用杂记">
+<meta property="og:url" content="http://yoursite.com/2017/04/15/常用杂记/index.html">
 <meta property="og:site_name" content="张弘力的每天努力一点点">
-<meta property="og:description" content="123django-admin startproject django_email_study./manage.py migrate./manage.py shell
-首先在setting.py里面增加如下内容
-1234567EMAIL_BACKEND = &amp;apos;django.core.mail.backends.smtp.EmailBackend&amp;apos;EMAIL_USE_TLS =">
-<meta property="og:updated_time" content="2017-04-12T22:51:41.000Z">
+<meta property="og:updated_time" content="2017-04-15T10:12:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="django实现smtp发邮件">
-<meta name="twitter:description" content="123django-admin startproject django_email_study./manage.py migrate./manage.py shell
-首先在setting.py里面增加如下内容
-1234567EMAIL_BACKEND = &amp;apos;django.core.mail.backends.smtp.EmailBackend&amp;apos;EMAIL_USE_TLS =">
+<meta name="twitter:title" content="常用杂记">
   
     <link rel="alternate" href="/atom.xml" title="张弘力的每天努力一点点" type="application/atom+xml">
   
@@ -69,10 +60,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-django实现smtp发邮件" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-常用杂记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/04/12/django实现smtp发邮件/" class="article-date">
-  <time datetime="2017-04-12T09:38:19.000Z" itemprop="datePublished">2017-04-12</time>
+    <a href="/2017/04/15/常用杂记/" class="article-date">
+  <time datetime="2017-04-15T09:58:12.000Z" itemprop="datePublished">2017-04-15</time>
 </a>
     
   </div>
@@ -83,7 +74,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      django实现smtp发邮件
+      常用杂记
     </h1>
   
 
@@ -91,17 +82,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">django-admin startproject django_email_study</div><div class="line">./manage.py migrate</div><div class="line">./manage.py shell</div></pre></td></tr></table></figure>
-<p>首先在setting.py里面增加如下内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">EMAIL_BACKEND = &apos;django.core.mail.backends.smtp.EmailBackend&apos;</div><div class="line">EMAIL_USE_TLS = False</div><div class="line">EMAIL_HOST = &apos;smtp.163.com&apos;</div><div class="line">EMAIL_PORT = 25</div><div class="line">EMAIL_HOST_USER = &apos;holydevil@163.com&apos;</div><div class="line">EMAIL_HOST_PASSWORD = &apos;9lingqq)&apos;</div><div class="line">DEFAULT_FROM_EMAIL = &apos;holydevil@163.com&apos;</div></pre></td></tr></table></figure>
-<p>在Shell里面输入<br>第一行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">from django.core.mail import send_mail</div></pre></td></tr></table></figure></p>
-<p>第二行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">send_mail(&quot;holySubject&quot;,&quot;holyMessage&quot;,&quot;holydevil@163.com&quot;,[&quot;holydevil@qq.com&quot;],fail_silently=False,)</div></pre></td></tr></table></figure></p>
-<p>在邮箱查询了一下成功了</p>
-
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/12/django实现smtp发邮件/" data-id="cj1j3tz5c0001zmrnk3b6ddup" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/15/常用杂记/" data-id="cj1j3tz5m0007zmrnct3ypod4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -110,19 +95,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/04/15/常用杂记/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          常用杂记
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/04/12/python实现的smtp发邮件/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/04/12/django实现smtp发邮件/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">python实现的smtp发邮件</div>
+      <div class="article-nav-title">django实现smtp发邮件</div>
     </a>
   
 </nav>
